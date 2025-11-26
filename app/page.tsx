@@ -40,12 +40,12 @@ const generateBoard = (): Board => {
 };
 
 // 輔助函式：計算連線數
-function checkLines(board: Board, drawn: string[]): number {
+function checkLines(board: Board, drawn: (string | number)[]): number {
   let lines = 0;
   const size = 5;
   const isHit = (r: number, c: number) => {
     const cell = board[r][c];
-    return cell === 'FREE' || drawn.includes(String(cell));
+    return cell === 'FREE' || drawn.some(d => String(d) === String(cell));
   };
 
   // 檢查橫列
@@ -84,7 +84,7 @@ export default function BingoGame() {
     }
   }, [drawnNumbers, board, isBingo]);
 
-  const isChecked = (num: BoardCell) => num === 'FREE' || drawnNumbers.includes(String(num));
+  const isChecked = (num: BoardCell) => num === 'FREE' || drawnNumbers.some(d => String(d) === String(num));
 
   return (
     <div className="flex flex-col items-center min-h-screen bg-gray-50 py-10 px-4">
