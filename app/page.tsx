@@ -100,7 +100,7 @@ export default function BingoGame() {
           <div
             key={idx}
             className={`w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center text-lg sm:text-2xl font-bold rounded-full transition-all duration-300
-              ${isChecked(num) ? 'bg-red-500 text-white scale-110 shadow-lg' : 'bg-gray-100 text-gray-800'}`}
+              ${isChecked(num) ? 'bg-yellow-400 text-black scale-110 shadow-[0_0_15px_rgba(250,204,21,0.8)] ring-2 ring-yellow-200' : 'bg-gray-100 text-gray-800'}`}
           >
             {num}
           </div>
