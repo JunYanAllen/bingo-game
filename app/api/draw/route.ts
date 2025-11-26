@@ -19,6 +19,8 @@ export async function DELETE() {
     // 建立 1-75 的陣列
     const allNumbers = Array.from({ length: 75 }, (_, i) => i + 1);
     // sadd 接受多個參數，使用 spread operator
-    await redis.sadd('bingo:pool', ...allNumbers);
+    if (allNumbers.length > 0) {
+        await redis.sadd('bingo:pool', ...(allNumbers as [number, ...number[]]));
+    }
     return NextResponse.json({ message: '遊戲已重置' });
 }
