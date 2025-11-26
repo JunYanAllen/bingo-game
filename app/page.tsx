@@ -111,7 +111,7 @@ export default function BingoGame() {
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-10 rounded-2xl text-center animate-bounce">
             <div className="text-6xl mb-4">🏆</div>
-            <div className="text-5xl font-black text-red-600">BINGO!!!</div>
+            <div className="text-5xl font-black text-red-600">完成遊戲</div>
             <div className="text-xl text-gray-500 mt-2">恭喜你達成 3 條連線</div>
           </div>
         </div>
